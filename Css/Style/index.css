@@ -164,7 +164,12 @@ h4{
     justify-content: space-between;
 }
 .img{
-    padding-bottom: 42px;
+    margin-bottom: 42px;
+    position: relative;
+    cursor: pointer;
+}
+.img:hover .hover{
+    opacity: 1;
 }
 .img img{
     display: block;
@@ -182,6 +187,30 @@ h4{
 }
 .small-text-1{
     font: 400 19px arial;
+}
+.hover{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    transition: .4s;
+    opacity: 0;
+}
+.hover a{
+    display: inline-block;
+    font-weight: 400;
+    font-size: 14px;
+    font-family: "Roboto";
+    color: #fff;
+    background-color: rgb(17, 14, 15, .8);
+    text-transform: uppercase;
+    text-align: center;
+    width: 100%;
+    padding: 32px 0;
+    transition: .4s;
+}
+.hover a:hover{
+    background-color: #eee;
+    color: #110e0f;
 }
 #tablet{
     display: none;
