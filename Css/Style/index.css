@@ -350,6 +350,7 @@ h6{
     .section-1{justify-content: start;}
     .icon-1{padding-right: 30px;}
     .link a{background: transparent; color: #110e0f; margin-left: 20px; padding: 20px 0; width: 80px;}
+    .footer-text-1 p{padding-bottom: 45px;}
     .view-2 ul, #view{align-items: center;}
     .img-1, .icon{display: none;}
 }
