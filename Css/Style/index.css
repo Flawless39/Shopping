@@ -27,12 +27,42 @@ nav ul{
     justify-content: space-between;
     width: 580px;
 }
-nav a{
+nav a, .dropdown a{
     font-weight: 400;
     font-size: 16px;
     font-family: "Roboto", sans-serif;
     color: #000;
     text-transform: capitalize;
+}
+.dropdown-content{
+    position: absolute;
+    left: 0;
+    z-index: 1;
+    background-color: #fff;
+    width: 100%;
+    transition: .4s;
+    opacity: 0;
+    pointer-events: none;
+}
+.dropdown{
+    display: none;
+}
+.dropdown-content a{
+    display: inline-block;
+    font: 500 16px arial;
+    color: #000;
+    text-transform: capitalize;
+    min-width: 210px;
+    padding: 12px 20px;
+    transition: .4s;
+}
+.dropdown-content a:hover{
+    background-color: #eee;
+    color: #000;
+}
+.dropdown:hover .dropdown-content{
+    opacity: 1;
+    pointer-events: auto;
 }
 .icon{
     padding-left: 10px;
@@ -334,15 +364,20 @@ h6{
     .container-1{width: 90vw; margin-left: calc(50% - 45vw);}
     .img-1{width: 48%;}
     .circle, .img-2 img{width: 100%; height: auto;}
-    .circle{aspect-ratio: 1 / 1;}
+    .circle{aspect-ratio: 1 / 1; margin-left: 100px;}
     .img-2{width: 60%; left: -11%;}
 }
 @media(min-width:768px) and (max-width:1200px){
+    header{padding: 50px 0 80px 0;}
     .container{width: 90%;}
-    .img-1, .text-1, .section-1, .section{width: 48%;}
+    #navbar{padding-bottom: 80px;}
+    .dropdown{display: block;}
+    .logo a{font-size: 20px;}
+    .img-1, .section-1, .section{width: 48%;}
     .circle, .img-2 img, h1, .text-1 p, .text-2 p, .img img, #title-1 p, .form-1, .form-1 input, .footer-text-1 p{width: 100%;}
     .circle, .img-2 img{height: auto;}
-    .circle{aspect-ratio: 1 / 1;}
+    .circle{aspect-ratio: 1 / 1; margin-left: 60px;}
+    .text-1{width: 40%;}
     .img-2{width: 60%; left: -11%;}
     h1{font-size: 36px;}
     .text-1 p, .text-1 a{font-size: 16px;}
@@ -351,35 +386,27 @@ h6{
     .link a{background: transparent; color: #110e0f; margin-left: 20px; padding: 20px 0; width: 80px;}
     .footer-text-1{width: 30%;}
     #view{flex-direction: column; align-items: center; gap: 16px;}
-    .flex-view{display: none;}
+    nav, .flex-view{display: none;}
 }
 @media(max-width:768px){
     .container{width: 90%;}
-    #navbar, nav ul, #all, #all-1, #footer-text, #view, .view-2 ul{flex-direction: column;}
-    #navbar, #all, #view{gap: 30px;}
-    .logo a, h1{font-size: 30px;}
-    nav ul, .text-1, #footer-text, .rights p{text-align: center;}
-    nav ul, .view-2 ul{gap: 16px;}
+    #navbar{padding-bottom: 60px;}
+    #all, #all-1, #footer-text, #view, .view-2 ul{flex-direction: column;}
+    #all, #view{gap: 30px;}
+    .logo a{font-size: 20px;}
+    h1{font-size: 30px;}
+    .dropdown{display: block;}
+    .text-1, #footer-text, .rights p{text-align: center;}
+    .view-2 ul{gap: 16px;}
     .content{justify-content: center;}
     h1{line-height: normal; width: auto; min-width: 240px;}
-    .text-1{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        background-color: #fff;
-        padding: 30px;
-        border-radius: 50%;
-        width: 100vw;
-        aspect-ratio: 1 / 1;
-    }
     .text-1 p, .text-1 a{font-size: 16px;}
-    .text-1 p{padding: 20px 0 50px 0; line-height: 20px; width: auto; min-width: 300px;}
-    nav ul, .section-1, .text-2, .text-2 p, .img img, .text, #title-1 p, .form-1, .form-1 input, .footer-text-1 p, .view-2 ul{width: 100%;}
+    .text-1 p{padding: 20px 0 50px 0;}
+    .text-1 p, .section-1, .text-2, .text-2 p, .img img, .text, #title-1 p, .form-1, .form-1 input, .footer-text-1 p, .view-2 ul{width: 100%;}
     .section-1{justify-content: start;}
     .icon-1{padding-right: 30px;}
     .link a{background: transparent; color: #110e0f; margin-left: 20px; padding: 20px 0; width: 80px;}
     .footer-text-1 p{padding-bottom: 45px;}
     .view-2 ul, #view{align-items: center;}
-    .img-1, .icon{display: none;}
+    nav, .img-1, .icon{display: none;}
 }
